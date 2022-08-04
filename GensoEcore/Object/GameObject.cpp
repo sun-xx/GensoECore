@@ -231,7 +231,7 @@ size_t Genso::GensoObjBase::get_layer() const
 {
     return layer;
 }
-void Genso::GensoObjBase::setRenderStates(sf::RenderStates rdstat)
+void Genso::GensoObjBase::setRenderStates(const sf::RenderStates& rdstat)
 {
     this->renderstates=rdstat;
 }

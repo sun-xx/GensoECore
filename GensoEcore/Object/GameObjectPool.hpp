@@ -21,6 +21,7 @@ namespace Genso
         extern Genso::visitors::Obj2_box obj2_box;
         extern Genso::visitors::Obj2_col obj2_col;
         extern Genso::visitors::Obj2_pos obj2_pos;
+        extern Genso::visitors::Obj1_this obj1_this;
     }
 
 
@@ -47,8 +48,8 @@ namespace Genso
             template<typename Obj1Visitor> std::optional<bool> isBoxIntersectWith(size_t id,sf::FloatRect frect,Obj1Visitor const &vis=Genso::visitors::obj1_box) const;
 
             //‰÷»æ
-            template<size_t MaxLayer,size_t MaxLayerObject>
-            void _batchRender(const sf::RenderWindow& rwind,const Genso::render::RenderCube<MaxLayer,MaxLayerObject>& cube) const;
+            template<size_t MaxLayer,size_t MaxLayerObject,typename Obj1Visitor>
+            void _batchRender(const sf::RenderWindow& rwind,const Genso::render::RenderCube<MaxLayer,MaxLayerObject>& cube,Obj1Visitor const &vis_this=Genso::visitors::obj1_this) const;
 
     };
 }

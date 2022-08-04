@@ -242,9 +242,19 @@
             <location file="D:\SFML\SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit\SFML-2.5.1\include\SFML\System\Utf.inl" line="111" column="24" info="Condition &apos;input&lt;=0x0010FFFF&apos; is always true" />
             <location file="D:\SFML\SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit\SFML-2.5.1\include\SFML\System\Utf.inl" line="96" column="16" info="Assuming that condition &apos;input&gt;0x0010FFFF&apos; is not redundant" />
         </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;rdstat&apos; can be declared with const" verbose="Parameter &apos;rdstat&apos; can be declared with const" cwe="398" file0="GensoEcore/Object/GameObject.cpp">
+            <location file="GensoEcore\Object\GameObject.cpp" line="234" column="61" info="Parameter &apos;rdstat&apos; can be declared with const" />
+            <symbol>rdstat</symbol>
+        </error>
         <error id="unusedStructMember" severity="style" msg="struct member &apos;_TransStat::rotate_angle&apos; is never used." verbose="struct member &apos;_TransStat::rotate_angle&apos; is never used." cwe="563" file0="GensoEcore/Object/GameObject.hpp">
             <location file="GensoEcore\Object\GameObject.hpp" line="12" column="15" />
             <symbol>_TransStat::rotate_angle</symbol>
+        </error>
+        <error id="missingReturn" severity="error" msg="Found a exit path from function with non-void return type that has missing return statement" verbose="Found a exit path from function with non-void return type that has missing return statement" cwe="758" file0="GensoEcore/Object/GameObjectPool.cpp">
+            <location file="GensoEcore\Object\GameObjectPool.cpp" line="127" column="9" />
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;id!=-1&apos; is always true" verbose="Condition &apos;id!=-1&apos; is always true" cwe="571" file0="GensoEcore/Object/RenderCube.cpp">
+            <location file="GensoEcore\Object\RenderCube.cpp" line="10" column="40" info="Condition &apos;id!=-1&apos; is always true" />
         </error>
         <error id="invalidPointerCast" severity="portability" msg="Casting from float * to signed long * is not portable due to different binary data representations on different platforms." verbose="Casting from float * to signed long * is not portable due to different binary data representations on different platforms." cwe="704" file0="GensoEcore/Qcalc/Qcalc.cpp">
             <location file="GensoEcore\Qcalc\Qcalc.cpp" line="46" column="13" />
@@ -273,10 +283,6 @@
         <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [D:/SFML/SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit/SFML-2.5.1/include/SFML/Config.hpp:104] #error This operating system is not supported by SFML library\012AURORA_DOXYGEN_SECTION : [D:/SFML/SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit/SFML-2.5.1/include/SFML/Config.hpp:104] #error This operating system is not supported by SFML library\012NDEBUG : [D:/SFML/SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit/SFML-2.5.1/include/SFML/Config.hpp:104] #error This operating system is not supported by SFML library\012SFML_DOXYGEN : [D:/SFML/SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit/SFML-2.5.1/include/SFML/Config.hpp:104] #error This operating system is not supported by SFML library\012SFML_GRAPHICS_EXPORTS : [D:/SFML/SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit/SFML-2.5.1/include/SFML/Config.hpp:104] #error This operating system is not supported by SFML library\012SFML_NO_DEPRECATED_WARNINGS : [D:/SFML/SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit/SFML-2.5.1/include/SFML/Config.hpp:104] #error This operating system is not supported by SFML library\012SFML_STATIC : [D:/SFML/SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit/SFML-2.5.1/include/SFML/Config.hpp:104] #error This operating system is not supported by SFML library\012SFML_STATIC;_MSC_VER : [D:/SFML/extensions/Thor-master/Thor-master/extlibs/aurora/include/Aurora/Config.hpp:56] #error At least Visual Studio 2010 is required.\012SFML_STATIC;_WIN32;__WIN32__ : [D:/SFML/extensions/Thor-master/Thor-master/extlibs/aurora/include/Aurora/Meta/Preprocessor.hpp:62] failed to expand &apos;AURORA_FOREACH&apos;, Invalid ## usage when expanding &apos;AURORA_PP_CAT_IMPL&apos;: Unexpected token &apos;)&apos;\012SFML_STATIC;_WIN32;__WIN32__;THOR_EXPORTS : [D:/SFML/extensions/Thor-master/Thor-master/extlibs/aurora/include/Aurora/Meta/Preprocessor.hpp:62] failed to expand &apos;AURORA_FOREACH&apos;, Invalid ## usage when expanding &apos;AURORA_PP_CAT_IMPL&apos;: Unexpected token &apos;)&apos;\012SFML_STATIC;_WIN32;__WIN32__;_MSC_VER : [D:/SFML/extensions/Thor-master/Thor-master/extlibs/aurora/include/Aurora/Config.hpp:56] #error At least Visual Studio 2010 is required.\012SFML_SYSTEM_EXPORTS : [D:/SFML/SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit/SFML-2.5.1/include/SFML/Config.hpp:104] #error This operating system is not supported by SFML library\012SFML_WINDOW_EXPORTS : [D:/SFML/SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit/SFML-2.5.1/include/SFML/Config.hpp:104] #error This operating system is not supported by SFML library\012TARGET_OS_MAC;__APPLE__;__MACH__ : [D:/SFML/extensions/Thor-master/Thor-master/extlibs/aurora/include/Aurora/Meta/Preprocessor.hpp:62] failed to expand &apos;AURORA_FOREACH&apos;, Invalid ## usage when expanding &apos;AURORA_PP_CAT_IMPL&apos;: Unexpected token &apos;)&apos;\012TARGET_OS_MAC;__APPLE__;__MACH__;__OpenBSD__;__unix__;__unix__ : [D:/SFML/extensions/Thor-master/Thor-master/extlibs/aurora/include/Aurora/Meta/Preprocessor.hpp:62] failed to expand &apos;AURORA_FOREACH&apos;, Invalid ## usage when expanding &apos;AURORA_PP_CAT_IMPL&apos;: Unexpected token &apos;)&apos;\012_MSC_VER : [D:/SFML/extensions/Thor-master/Thor-master/extlibs/aurora/include/Aurora/Config.hpp:56] #error At least Visual Studio 2010 is required.\012_WIN32 : [D:/SFML/extensions/Thor-master/Thor-master/extlibs/aurora/include/Aurora/Meta/Preprocessor.hpp:62] failed to expand &apos;AURORA_FOREACH&apos;, Invalid ## usage when expanding &apos;AURORA_PP_CAT_IMPL&apos;: Unexpected token &apos;)&apos;\012__ANDROID__;__unix__ : [D:/SFML/extensions/Thor-master/Thor-master/extlibs/aurora/include/Aurora/Meta/Preprocessor.hpp:62] failed to expand &apos;AURORA_FOREACH&apos;, Invalid ## usage when expanding &apos;AURORA_PP_CAT_IMPL&apos;: Unexpected token &apos;)&apos;\012__APPLE__;__MACH__ : [D:/SFML/SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit/SFML-2.5.1/include/SFML/Config.hpp:67] #error This Apple operating system is not supported by SFML library\012__FreeBSD__;__FreeBSD_kernel__;__unix__ : [D:/SFML/extensions/Thor-master/Thor-master/extlibs/aurora/include/Aurora/Meta/Preprocessor.hpp:62] failed to expand &apos;AURORA_FOREACH&apos;, Invalid ## usage when expanding &apos;AURORA_PP_CAT_IMPL&apos;: Unexpected token &apos;)&apos;\012__GLIBCPP__;__GLIBCXX__ : [D:/SFML/SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit/SFML-2.5.1/include/SFML/Config.hpp:104] #error This operating system is not supported by SFML library\012__GNUC__ : [D:/SFML/extensions/Thor-master/Thor-master/extlibs/aurora/include/Aurora/Config.hpp:64] #error At least g++ 4.6 is required.\012__GNUC__;__clang__ : [D:/SFML/extensions/Thor-master/Thor-master/extlibs/aurora/include/Aurora/Config.hpp:60] #error At least Clang 3.1 is required.\012__GNUG__;__GXX_EXPERIMENTAL_CXX0X__;__VARIADIC_TEMPLATES : [D:/SFML/SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit/SFML-2.5.1/include/SFML/Config.hpp:104] #error This operating system is not supported by SFML library\012__OpenBSD__;__unix__ : [D:/SFML/extensions/Thor-master/Thor-master/extlibs/aurora/include/Aurora/Meta/Preprocessor.hpp:62] failed to expand &apos;AURORA_FOREACH&apos;, Invalid ## usage when expanding &apos;AURORA_PP_CAT_IMPL&apos;: Unexpected token &apos;)&apos;\012__clang__ : [D:/SFML/extensions/Thor-master/Thor-master/extlibs/aurora/include/Aurora/Config.hpp:60] #error At least Clang 3.1 is required.\012__linux__;__unix__ : [D:/SFML/extensions/Thor-master/Thor-master/extlibs/aurora/include/Aurora/Meta/Preprocessor.hpp:62] failed to expand &apos;AURORA_FOREACH&apos;, Invalid ## usage when expanding &apos;AURORA_PP_CAT_IMPL&apos;: Unexpected token &apos;)&apos;\012__unix__ : [D:/SFML/SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit/SFML-2.5.1/include/SFML/Config.hpp:97] #error This UNIX operating system is not supported by SFML library" file0="main.cpp">
             <location file="main.cpp" line="0" column="0" />
         </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;Qatan2&apos; is never used." verbose="The function &apos;Qatan2&apos; is never used." cwe="561">
-            <location file="GensoEcore\Qcalc\Qcalc.cpp" line="149" column="0" />
-            <symbol>Qatan2</symbol>
-        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;Qcos&apos; is never used." verbose="The function &apos;Qcos&apos; is never used." cwe="561">
             <location file="GensoEcore\Qcalc\Qcalc.cpp" line="114" column="0" />
             <symbol>Qcos</symbol>
@@ -293,17 +299,21 @@
             <location file="GensoEcore\Qcalc\Qcalc.cpp" line="118" column="0" />
             <symbol>Qtan</symbol>
         </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;_changeCollideGroup&apos; is never used." verbose="The function &apos;_changeCollideGroup&apos; is never used." cwe="561">
-            <location file="GensoEcore\Object\GameObjectPool.cpp" line="58" column="0" />
-            <symbol>_changeCollideGroup</symbol>
-        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;addTransMat&apos; is never used." verbose="The function &apos;addTransMat&apos; is never used." cwe="561">
             <location file="GensoEcore\Object\GameObject.cpp" line="111" column="0" />
             <symbol>addTransMat</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;batchRender&apos; is never used." verbose="The function &apos;batchRender&apos; is never used." cwe="561">
+            <location file="GensoEcore\Object\RenderCube.cpp" line="33" column="0" />
+            <symbol>batchRender</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;blockused&apos; is never used." verbose="The function &apos;blockused&apos; is never used." cwe="561">
             <location file="GensoEcore\Object\Mempool\mempool.cpp" line="46" column="0" />
             <symbol>blockused</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;changeCollideGroup&apos; is never used." verbose="The function &apos;changeCollideGroup&apos; is never used." cwe="561">
+            <location file="GensoEcore\Object\GameObjectPool.cpp" line="62" column="0" />
+            <symbol>changeCollideGroup</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;clearTransMat&apos; is never used." verbose="The function &apos;clearTransMat&apos; is never used." cwe="561">
             <location file="GensoEcore\Object\GameObject.cpp" line="115" column="0" />
@@ -314,7 +324,7 @@
             <symbol>data</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;delObj&apos; is never used." verbose="The function &apos;delObj&apos; is never used." cwe="561">
-            <location file="GensoEcore\Object\GameObjectPool.cpp" line="45" column="0" />
+            <location file="GensoEcore\Object\GameObjectPool.cpp" line="49" column="0" />
             <symbol>delObj</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;getAcceleration&apos; is never used." verbose="The function &apos;getAcceleration&apos; is never used." cwe="561">
@@ -324,14 +334,6 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;getAnchor&apos; is never used." verbose="The function &apos;getAnchor&apos; is never used." cwe="561">
             <location file="GensoEcore\Object\GameObject.cpp" line="107" column="0" />
             <symbol>getAnchor</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;getCollideGroup&apos; is never used." verbose="The function &apos;getCollideGroup&apos; is never used." cwe="561">
-            <location file="GensoEcore\Object\GameObject.cpp" line="156" column="0" />
-            <symbol>getCollideGroup</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;getCollideRadius&apos; is never used." verbose="The function &apos;getCollideRadius&apos; is never used." cwe="561">
-            <location file="GensoEcore\Object\GameObject.cpp" line="164" column="0" />
-            <symbol>getCollideRadius</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;getInverseTransMat&apos; is never used." verbose="The function &apos;getInverseTransMat&apos; is never used." cwe="561">
             <location file="GensoEcore\Object\GameObject.cpp" line="194" column="0" />
@@ -344,10 +346,6 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;getScale&apos; is never used." verbose="The function &apos;getScale&apos; is never used." cwe="561">
             <location file="GensoEcore\Object\GameObject.cpp" line="95" column="0" />
             <symbol>getScale</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;getSprite&apos; is never used." verbose="The function &apos;getSprite&apos; is never used." cwe="561">
-            <location file="GensoEcore\Object\GameObject.cpp" line="177" column="0" />
-            <symbol>getSprite</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;getSpriteColor&apos; is never used." verbose="The function &apos;getSpriteColor&apos; is never used." cwe="561">
             <location file="GensoEcore\Object\GameObject.cpp" line="190" column="0" />
@@ -397,6 +395,10 @@
             <location file="GensoEcore\Object\GameObject.cpp" line="206" column="0" />
             <symbol>setDead</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;setRenderStates&apos; is never used." verbose="The function &apos;setRenderStates&apos; is never used." cwe="561">
+            <location file="GensoEcore\Object\GameObject.cpp" line="234" column="0" />
+            <symbol>setRenderStates</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;setSpriteColor&apos; is never used." verbose="The function &apos;setSpriteColor&apos; is never used." cwe="561">
             <location file="GensoEcore\Object\GameObject.cpp" line="185" column="0" />
             <symbol>setSpriteColor</symbol>
@@ -404,6 +406,10 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;setVelocity&apos; is never used." verbose="The function &apos;setVelocity&apos; is never used." cwe="561">
             <location file="GensoEcore\Object\GameObject.cpp" line="127" column="0" />
             <symbol>setVelocity</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;set_layer&apos; is never used." verbose="The function &apos;set_layer&apos; is never used." cwe="561">
+            <location file="GensoEcore\Object\GameObject.cpp" line="226" column="0" />
+            <symbol>set_layer</symbol>
         </error>
         <error id="missingInclude" severity="information" msg="Cppcheck cannot find all the include files (use --check-config for details)" verbose="Cppcheck cannot find all the include files. Cppcheck can check the code without the include files found. But the results will probably be more accurate if all the include files are found. Please check your project&apos;s include directories and add all of them as include directories for Cppcheck. To see what files Cppcheck cannot find use --check-config." />
     </errors>

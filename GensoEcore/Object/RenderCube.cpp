@@ -7,9 +7,9 @@ bool Genso::render::RenderCube<MaxLayer,MaxLayerObject>::fill(sf::Sprite* sprite
     {
         return false;
     }
-    if(size_t id=cube[layer].alloc();id!=-1)
+    if(auto id=cube[layer].alloc();id.has_value())
     {
-        cube[layer][id]=std::make_pair(sprite,rdstat);
+        cube[layer][*id]=std::make_pair(sprite,rdstat);
         if(layerused[layer]==false)
         {
             layerused[layer]=true;
@@ -32,15 +32,17 @@ void Genso::render::RenderCube<MaxLayer,MaxLayerObject>::clear()
 template<size_t MaxLayer,size_t MaxLayerObject>
 void Genso::render::RenderCube<MaxLayer,MaxLayerObject>::batchRender(const sf::RenderWindow& wind) const
 {
-    for(size_t i=MaxLayer-1;i>=0;i--)
+    for(size_t i=0;i<MaxLayer;i++)
     {
-        if(layerused[i]==true)
+        size_t i_=MaxLayer-1-i;
+        if(layerused[i_]==true)
         {
-            for(size_t j=MaxLayerObject-1;j>=0;j--)
+            for(size_t j=0;j<MaxLayerObject-1;j++)
             {
-                if(auto res=cube[i].at(j);res.has_value())
+                size_t j_=MaxLayerObject-1-j;
+                if(auto res=cube[i_].at(j_);res.has_value())
                 {
-                    wind.draw(*(cube[i][j].first),cube[i][j].second);
+                    wind.draw(*(res->first),*(res->second));
                 }
             }
         }

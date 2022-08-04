@@ -37,6 +37,14 @@ namespace Genso
                 return std::make_tuple(obj1.getCollideRadius(),obj2.getCollideRadius());
             }
         };
+        struct Obj1_this
+        {
+            template<typename T>
+            auto operator()(const T& obj) const
+            {
+                return obj;
+            }
+        };
     }
 }
 

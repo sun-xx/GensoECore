@@ -127,7 +127,7 @@ namespace Genso
             void set_layer(size_t l);
             size_t get_layer() const;
 
-            void setRenderStates(sf::RenderStates rdstat);
+            void setRenderStates(const sf::RenderStates& rdstat);
             const sf::RenderStates& getRenderStates() const;
 
     };

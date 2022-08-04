@@ -1,6 +1,6 @@
 #include"mempool.hpp"
 template<typename T,size_t MaxAllocCnt>
-size_t Genso::BaseMemPool<T,MaxAllocCnt>::alloc()
+std::optional<size_t> Genso::BaseMemPool<T,MaxAllocCnt>::alloc()
 {
     if(freeindex.size()>0)
     {
@@ -11,7 +11,7 @@ size_t Genso::BaseMemPool<T,MaxAllocCnt>::alloc()
     }
     else
     {
-        return static_cast<size_t>(-1);
+        return std::nullopt;
     }
 }
 template<typename T,size_t MaxAllocCnt>

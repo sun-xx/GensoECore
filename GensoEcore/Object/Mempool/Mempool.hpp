@@ -23,8 +23,8 @@ namespace Genso
             };
 
             ///@brief 申请分配一个memblock
-            ///@return 申请成功的block的index，失败为-1
-            size_t alloc();
+            ///@return 申请成功的block的index
+            std::optional<size_t> alloc();
 
             ///@brief 回收一个block
             void free(size_t id);
