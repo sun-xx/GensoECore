@@ -1,4 +1,2 @@
-bin
-obj
-GensoY.cbp
-GensoY.layout
+*.exe
+*.dll
