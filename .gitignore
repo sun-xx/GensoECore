@@ -1,7 +1,2 @@
-bin
-obj
-GensoY.cbp
-GensoY.layout
-GensoY.depend
-main.cpp
-*.xml
+*.exe
+*.dll
