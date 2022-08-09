@@ -1,4 +1,5 @@
-#include<CollisionDetect.cpp>
+#include<CollisionDetect.hpp>
+#include<../Utils/Utils.hpp>
 
 inline bool Genso::AABBHit(sf::Vector2f pos1,sf::Vector2f size1,
     sf::Vector2f pos2,sf::Vector2f size2)
@@ -26,8 +27,7 @@ inline bool Genso::AABBHit(sf::Vector2f pos1,sf::Vector2f size1,
 inline bool Genso::CircleHit(sf::Vector2f pos1,float r1,
     sf::Vector2f pos2,float r2)
 {
-    return !((r1+r2) < 
-    Qsqrt((pos1.x-pos2.x)*(pos1.x-pos2.x)+(pos1.y-pos2.y)*(pos1.y-pos2.y)));
+    return !((r1+r2) < getDistance(pos1,pos2));
 }
 
 inline bool Genso::CircleHit(sf::Vector2f pos1,sf::Vector2f last_pos1,float r1,
@@ -39,5 +39,5 @@ inline bool Genso::CircleHit(sf::Vector2f pos1,sf::Vector2f last_pos1,float r1,
 inline bool Genso::SegmentLaserHit(sf::Vector2f pos1,sf::Vector2f pos2,
     sf::Vector2f myPos,float judgeValue)
 {
-    
+    return (getDistance(pos1,myPos) + getDistance(pos2,myPos)) < judgeValue;
 }

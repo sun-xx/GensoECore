@@ -6,12 +6,12 @@
 #define M_PI_4 PI/4
 #define SIGN_MASK_L ((long long)1<<sizeof(long long)*8-1)
 #define SIGN_MASK_I ((int)1<<sizeof(int)*8-1)
-//#define GET_SIGN_I(x) (((x)>>31)|1)//1ÎªÕı£¬-1Îª¸º,¶ÔÓÚÕ¼32bitµÄÊı¾İ
-//#define GET_SIGN_L(x) (((x)>>63)|1)//Í¬ÉÏ£¬¶ÔÓÚÕ¼64bitµÄÊı¾İ
+//#define GET_SIGN_I(x) (((x)>>31)|1)//1ä¸ºæ­£ï¼Œ-1ä¸ºè´Ÿ,å¯¹äºå 32bitçš„æ•°æ®
+//#define GET_SIGN_L(x) (((x)>>63)|1)//åŒä¸Šï¼Œå¯¹äºå 64bitçš„æ•°æ®
 //#define Qabs_L(x) ((x^(x>>(sizeof(long long)-1)))-(x>>(sizeof(long long)-1)))
 //#define Qabs_I(x) ((x^(x>>(sizeof(int)-1)))-(x>>(sizeof(int)-1)))
 //#define Qcos(angle) (Qsin((angle)+90))
-//#define Qtan(angle) (std::tan(angle))//emmmmm,Äã×°×÷Ã»¿´¼û¾ÍºÃ
+//#define Qtan(angle) (std::tan(angle))//emmmmm,ä½ è£…ä½œæ²¡çœ‹è§å°±å¥½
 
 #define GET_LAST_BIT(x) (x&1)
 
@@ -25,9 +25,9 @@ inline T Genso::qc::Qabs(T num)
     if constexpr (std::is_same<T, float>::value)
     {
         int m=0, n=0;
-        m = *(int *)&num; //¸´ÖÆbitÖµ
+        m = *(int *)&num; //å¤åˆ¶bitå€¼
         n = m&0x7fffffff;
-        return *(float *)&n;//¸´ÖÆbitÖµ
+        return *(float *)&n;//å¤åˆ¶bitå€¼
     }
     else
     {
@@ -91,9 +91,9 @@ inline float Genso::qc::Qlog(float m,float N)//logm(N)
 /*inline float Qabs_f(float x)
 {
     int m=0, n=0;
-    m = *(int *)&x; //¸´ÖÆbitÖµ
+    m = *(int *)&x; //å¤åˆ¶bitå€¼
     n = m&0x7fffffff;
-    return *(float *)&n;//¸´ÖÆbitÖµ
+    return *(float *)&n;//å¤åˆ¶bitå€¼
 
 }*/
 
@@ -168,7 +168,7 @@ inline float Genso::qc::Qatan2( float y, float x )
         a = 360.f - a;
     return a;
 }
-inline float Genso::qc::Qexp(float y)//Îó²îÓĞµã´ó£¬¶Ô¾«¶ÈÒªÇó¸ßµÄ³¡ºÏ²»ÒªÊ¹ÓÃ
+inline float Genso::qc::Qexp(float y)//è¯¯å·®æœ‰ç‚¹å¤§ï¼Œå¯¹ç²¾åº¦è¦æ±‚é«˜çš„åœºåˆä¸è¦ä½¿ç”¨
 {
     float d;
     *(reinterpret_cast<short*>(&d) + 0) = 0;
@@ -177,7 +177,7 @@ inline float Genso::qc::Qexp(float y)//Îó²îÓĞµã´ó£¬¶Ô¾«¶ÈÒªÇó¸ßµÄ³¡ºÏ²»ÒªÊ¹ÓÃ
 }
 
 
-inline float Genso::qc::Qpowf(float a, float b)//a^b=2^(blog2(a)),Îó²îÓĞµã´ó£¬¶Ô¾«¶ÈÒªÇó¸ßµÄ³¡ºÏ²»ÒªÊ¹ÓÃ
+inline float Genso::qc::Qpowf(float a, float b)//a^b=2^(blog2(a)),è¯¯å·®æœ‰ç‚¹å¤§ï¼Œå¯¹ç²¾åº¦è¦æ±‚é«˜çš„åœºåˆä¸è¦ä½¿ç”¨
 {
     int t=b*Qlog(2,a);
     float d;

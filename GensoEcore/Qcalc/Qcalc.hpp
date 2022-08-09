@@ -26,9 +26,9 @@ namespace Genso
 
         inline float Qatan2( float y, float x );
 
-        inline float Qexp(float y);//Îó²îÓĞµã´ó£¬¶Ô¾«¶ÈÒªÇó¸ßµÄ³¡ºÏ²»ÒªÊ¹ÓÃ
+        inline float Qexp(float y);//è¯¯å·®æœ‰ç‚¹å¤§ï¼Œå¯¹ç²¾åº¦è¦æ±‚é«˜çš„åœºåˆä¸è¦ä½¿ç”¨
 
-        inline float Qpowf(float a, float b);//a^b=2^(blog2(a)),Îó²îÓĞµã´ó£¬¶Ô¾«¶ÈÒªÇó¸ßµÄ³¡ºÏ²»ÒªÊ¹ÓÃ
+        inline float Qpowf(float a, float b);//a^b=2^(blog2(a)),è¯¯å·®æœ‰ç‚¹å¤§ï¼Œå¯¹ç²¾åº¦è¦æ±‚é«˜çš„åœºåˆä¸è¦ä½¿ç”¨
 
         inline float Qhypot(float x,float y);
 
